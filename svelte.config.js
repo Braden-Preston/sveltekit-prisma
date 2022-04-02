@@ -15,7 +15,7 @@ const config = {
     files: {
       assets: 'src/assets',
       routes: 'src/pages',
-      lib: 'src/modules'
+      lib: 'src/functions'
     },
     vite: {
       resolve: {

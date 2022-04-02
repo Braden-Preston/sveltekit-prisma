@@ -19,12 +19,12 @@ model User {
   password String
 }
 
-model Customer {
+model Customer {Custom
   id          Int       @id @default(autoincrement())
   email       String    @unique
-  name        String
-  avatar      String
-  description String
+  name        String?
+  avatar      String?
+  description String?
   projects    Project[]
 }
 

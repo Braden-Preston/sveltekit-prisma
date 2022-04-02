@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:sveltekit-prisma}/prisma/dev.db",
+      "name": "sveltekit-prisma (dev)"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}
