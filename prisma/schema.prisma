@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Core Functionality Models
+
+model User {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  name     String
+  password String
+}
+
+model Customer {
+  id          Int       @id @default(autoincrement())
+  email       String    @unique
+  name        String
+  avatar      String
+  description String
+  projects    Project[]
+}
+
+model Project {
+  id         Int       @id @default(autoincrement())
+  name       String
+  customerId Int
+  customer   Customer  @relation(fields: [customerId], references: [id])
+  services   Service[]
+  Invoice    Invoice[]
+}
+
+model Service {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  customers Project[]
+}
+
+model Invoice {
+  id          Int     @id @default(autoincrement())
+  description String
+  projectId   Int
+  project     Project @relation(fields: [projectId], references: [id])
+}
+
+// Models for User Preferences
