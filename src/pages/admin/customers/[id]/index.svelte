@@ -4,5 +4,6 @@
 </script>
 
 <a href="/admin/customers">Back</a>
+<a href="/admin/customers/1/edit">Edit</a>
 
-<h1>Edit Customer - #</h1>
+<h1>Customer - #</h1>

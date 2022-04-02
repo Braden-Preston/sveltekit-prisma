@@ -3,6 +3,6 @@
 
 </script>
 
-<a href="/admin/customers">Back</a>
+<a href="/admin/customers/1">Back</a>
 
 <h1>Edit Customer - #</h1>
