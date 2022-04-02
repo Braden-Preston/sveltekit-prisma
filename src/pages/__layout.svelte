@@ -1,5 +1,5 @@
 <script>
-  import Counter from '$lib/counter.svelte'
+  import Counter from '$components/counter.svelte'
 </script>
 
 <Counter />

@@ -1,7 +1,3 @@
-<script>
-  import Counter from '$lib/counter.svelte'
-</script>
-
 <svelte:head>
   <title>About</title>
 </svelte:head>

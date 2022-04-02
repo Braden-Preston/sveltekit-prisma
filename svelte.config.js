@@ -10,9 +10,23 @@ const config = {
 
   kit: {
     adapter: adapter({
-      out: './build',
+      out: './build'
     }),
-  },
+    files: {
+      assets: 'src/assets',
+      routes: 'src/pages',
+      lib: 'src/modules'
+    },
+    vite: {
+      resolve: {
+        alias: {
+          $root: path.resolve('./src'),
+          $schemas: path.resolve('./schemas'),
+          $components: path.resolve('./src/components')
+        }
+      }
+    }
+  }
 }
 
 export default config

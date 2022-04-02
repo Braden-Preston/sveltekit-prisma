@@ -1,6 +1,5 @@
 {
-  "trailingComma": "es5",
-  "printWidth": 100,
+  "trailingComma": "none",
   "arrowParens": "always",
   "singleQuote": true,
   "semi": false
