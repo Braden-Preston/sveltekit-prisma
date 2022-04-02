@@ -2,11 +2,6 @@ import { PrismaClientKnownRequestError } from '@prisma/client/runtime'
 import type { RequestHandler } from '@sveltejs/kit'
 import prisma from '../../../functions/prisma'
 
-const rest = async (ms: number) =>
-  new Promise((resolve) => {
-    setTimeout(resolve, ms)
-  })
-
 export const get: RequestHandler = async () => {
   // await rest(2000)
 
