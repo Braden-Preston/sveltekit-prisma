@@ -1,14 +1,14 @@
 <script>
-	import Counter from '$lib/counter.svelte';
+  import Counter from '$lib/counter.svelte'
 </script>
 
 <Counter />
 <div class="root">
-	<slot />
+  <slot />
 </div>
 
 <style>
-	.root {
-		border: 1px solid blue;
-	}
+  .root {
+    border: 1px solid blue;
+  }
 </style>

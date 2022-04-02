@@ -1,9 +1,9 @@
 <script>
-	import Counter from '$lib/counter.svelte';
+  import Counter from '$lib/counter.svelte'
 </script>
 
 <svelte:head>
-	<title>About</title>
+  <title>About</title>
 </svelte:head>
 
 <a href="/">Home</a>
