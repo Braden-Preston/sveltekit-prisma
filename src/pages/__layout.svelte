@@ -1,4 +1,6 @@
 <script>
+  import 'tippy.js/dist/tippy.css'
+
   import Counter from '$components/counter.svelte'
 </script>
 

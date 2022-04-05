@@ -11,15 +11,12 @@ let customerFirstName = faker.name.firstName()
 let customerLastName = faker.name.lastName()
 
 async function seed() {
-  
-
   let customers = Array(20).map(() => Math.random())
   console.log(customers)
-
 }
 
 seed()
-  .catch((e) => {
+  .catch(e => {
     console.error(e)
     process.exit(1)
   })

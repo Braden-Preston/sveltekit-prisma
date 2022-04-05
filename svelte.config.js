@@ -15,7 +15,10 @@ const config = {
     files: {
       assets: 'src/assets',
       routes: 'src/pages',
-      lib: 'src/functions'
+      lib: 'src'
+    },
+    methodOverride: {
+      allowed: ['PUT', 'PATCH', 'DELETE']
     },
     vite: {
       resolve: {

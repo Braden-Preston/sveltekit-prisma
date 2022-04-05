@@ -16,40 +16,45 @@ export const get: RequestHandler = async () => {
     }
   })
 
-  if (!customers) {
-    return { status: 400 }
-  }
-
   return {
-    headers: { 'Content-Type': 'application/json' },
-    status: 200,
-    body: { customers }
-  }
-}
-
-export const post: RequestHandler = async ({ request }) => {
-  const form = await request.formData()
-  const name = String(form.get('name'))
-  const email = String(form.get('email'))
-
-  await prisma.customer.create({
-    data: {
-      name: name,
-      email: email
+    body: {
+      customers
     }
-  })
-
-  return {}
-}
-
-export const del: RequestHandler = async ({ request }) => {
-  const form = await request.formData()
-  const customerId = +form.get('id')
-
-  await prisma.customer.delete({ where: { id: customerId } })
-
-  return {
-    status: 303,
-    headers: { location: '/admin' }
   }
+  // if (!customers) {
+  //   return { status: 400 }
+  // }
+
+  // return {
+  //   headers: { 'Content-Type': 'application/json' },
+  //   status: 200,
+  //   body: { customers }
+  // }
 }
+
+// export const post: RequestHandler = async ({ request }) => {
+//   const form = await request.formData()
+//   const name = String(form.get('name'))
+//   const email = String(form.get('email'))
+
+//   await prisma.customer.create({
+//     data: {
+//       name: name,
+//       email: email
+//     }
+//   })
+
+//   return {}
+// }
+
+// export const del: RequestHandler = async ({ request }) => {
+//   const form = await request.formData()
+//   const customerId = +form.get('id')
+
+//   await prisma.customer.delete({ where: { id: customerId } })
+
+//   return {
+//     status: 303,
+//     headers: { location: '/admin' }
+//   }
+// }

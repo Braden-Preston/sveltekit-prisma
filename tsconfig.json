@@ -1,9 +1,13 @@
 {
   "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
+    "moduleResolution": "node",
     "paths": {
-      "$root": ["./src/*"],
-      "$components": ["./src/components/*"]
+      "$root/*": ["./src/*"],
+      "$lib/*": ["./src/functions*"],
+      "$schemas": ["./src/schemas"],
+      "$schemas/*": ["./src/schemas/*"],
+      "$components/*": ["./src/components/*"]
     }
   }
 }

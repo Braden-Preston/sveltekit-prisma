@@ -8,4 +8,3 @@
 <a href="/admin/customers">Customers</a>
 
 <h1>Admin - Index</h1>
-

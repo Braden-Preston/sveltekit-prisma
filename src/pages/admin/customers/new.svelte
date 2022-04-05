@@ -1,18 +1,48 @@
 <script lang="ts">
-  import { createForm } from 'felte'
+  // import 'tippy.js/dist/tippy.css'
 
-  let { form } = createForm({
-    onError(err, context) {
-      console.log(err, context)
-    }
-  })
+  // import { createForm } from 'felte'
+  // import { validator } from '@felte/validator-yup'
+  // import reporter from '@felte/reporter-tippy'
+  // import { object, string } from 'yup'
+
+  // // export let errors
+
+  // let schema = object({
+  //   name: string().required(),
+  //   email: string().email().required()
+  // })
+
+  // let { form } = createForm({
+  //   initialValues: {
+  //     // ...errors
+  //   },
+  //   extend: [reporter(), validator({ schema })],
+  //   onSubmit(values, context) {
+  //     // console.log('values', values)
+  //     fetch('/admin/customers/new', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' }
+  //     })
+  //       .then(async (res) => {
+  //         let data = await res.body
+  //         console.log(data)
+  //       })
+  //       .catch(async (err) => {
+  //         console.log(err)
+  //       })
+  //   },
+  //   onError(err, context) {
+  //     console.log(err, context)
+  //   }
+  // })
 </script>
 
-<a href="/admin">Back</a>
+<a href="/admin/customers">Back</a>
 
 <h1>New</h1>
 
-<form use:form action="/admin/customers/new" method="post" autocomplete="on">
+<form action="/admin/customers/new" method="post" autocomplete="on">
   <div class="root">
     <input type="text" name="name" placeholder="First Name" />
     <input type="email" name="email" placeholder="Email (required)" />

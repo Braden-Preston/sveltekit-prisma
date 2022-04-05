@@ -15,7 +15,7 @@ datasource db {
 model User {
   id       Int    @id @default(autoincrement())
   email    String @unique
-  name     String
+  name     String?
   password String
 }
 
@@ -34,7 +34,7 @@ model Project {
   customerId Int
   customer   Customer  @relation(fields: [customerId], references: [id])
   services   Service[]
-  Invoice    Invoice[]
+  Invoice    Invoice?
 }
 
 model Service {
@@ -45,7 +45,7 @@ model Service {
 
 model Invoice {
   id          Int     @id @default(autoincrement())
-  description String
+  description String?
   projectId   Int
   project     Project @relation(fields: [projectId], references: [id])
 }
