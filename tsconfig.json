@@ -4,7 +4,8 @@
     "moduleResolution": "node",
     "paths": {
       "$root/*": ["./src/*"],
-      "$lib/*": ["./src/functions*"],
+      "$lib": ["./src"],
+      "$lib/*": ["./src/*"],
       "$schemas": ["./src/schemas"],
       "$schemas/*": ["./src/schemas/*"],
       "$components/*": ["./src/components/*"]

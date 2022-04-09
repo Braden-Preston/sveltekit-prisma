@@ -1,51 +1,40 @@
 <script lang="ts">
-  // import 'tippy.js/dist/tippy.css'
+  import { page } from '$app/stores'
+  import { object, string } from 'yup'
+  import { createForm } from '../../../functions/felte'
+  import type { Customer } from '@prisma/client'
 
-  // import { createForm } from 'felte'
-  // import { validator } from '@felte/validator-yup'
-  // import reporter from '@felte/reporter-tippy'
-  // import { object, string } from 'yup'
+  export let customer: Customer
 
-  // // export let errors
-
-  // let schema = object({
-  //   name: string().required(),
-  //   email: string().email().required()
-  // })
-
-  // let { form } = createForm({
-  //   initialValues: {
-  //     // ...errors
-  //   },
-  //   extend: [reporter(), validator({ schema })],
-  //   onSubmit(values, context) {
-  //     // console.log('values', values)
-  //     fetch('/admin/customers/new', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' }
-  //     })
-  //       .then(async (res) => {
-  //         let data = await res.body
-  //         console.log(data)
-  //       })
-  //       .catch(async (err) => {
-  //         console.log(err)
-  //       })
-  //   },
-  //   onError(err, context) {
-  //     console.log(err, context)
-  //   }
-  // })
+  let { form } = createForm({
+    initialValues: customer,
+    schema: object({
+      name: string(),
+      email: string().email().required()
+    })
+  })
 </script>
 
 <a href="/admin/customers">Back</a>
 
 <h1>New</h1>
 
-<form action="/admin/customers/new" method="post" autocomplete="on">
+<form use:form method="post" action={String($page.url)} autocomplete="on">
   <div class="root">
-    <input type="text" name="name" placeholder="First Name" />
-    <input type="email" name="email" placeholder="Email (required)" />
+    <label for="name">Name:</label>
+    <input type="text" name="name" aria-describedby="name-validation" />
+    <div
+      id="name-validation"
+      data-felte-reporter-dom-for="name"
+      data-felte-reporter-dom-level="warning"
+    />
+    <label for="email">Email:</label>
+    <input type="text" name="email" aria-describedby="email-validation" />
+    <div
+      id="email-validation"
+      data-felte-reporter-dom-for="email"
+      data-felte-reporter-dom-level="warning"
+    />
     <button type="submit">Submit</button>
   </div>
 </form>

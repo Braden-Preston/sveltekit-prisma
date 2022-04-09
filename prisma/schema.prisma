@@ -13,8 +13,8 @@ datasource db {
 // Core Functionality Models
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
   name     String?
   password String
 }
@@ -32,7 +32,7 @@ model Project {
   id         Int       @id @default(autoincrement())
   name       String
   customerId Int
-  customer   Customer  @relation(fields: [customerId], references: [id])
+  customer   Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
   services   Service[]
   Invoice    Invoice?
 }
@@ -46,8 +46,8 @@ model Service {
 model Invoice {
   id          Int     @id @default(autoincrement())
   description String?
-  projectId   Int
-  project     Project @relation(fields: [projectId], references: [id])
+  projectId   Int     @unique
+  project     Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
 }
 
 // Models for User Preferences
